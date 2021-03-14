@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/CSD13">
+	<act name="SUBJECT">
+		<meta>
+			<identification source="#Engineerish">
+				<FRBRWork>
+                    <FRBRthis value="DOC_URL"/>
+                    <FRBRuri value="DOC_URL"/>
+                    <FRBRdate date="DATE_PUBLISHED" name="Publish"/>
+                    <FRBRauthor as="#author" href=""/>
+                    <FRBRcountry value="gr"/>
+                </FRBRWork>
+                
+                <FRBRExpression>
+                    <FRBRthis value=""/>
+                    <FRBRuri value=""/>
+                    <FRBRdate date="DATE_LAST_MODIFIED" name="Insert"/>
+                    <FRBRauthor as="#editor" href=""/>
+                    <FRBRlanguage language="gr"/>
+                </FRBRExpression>
+                			
+				<FRBRManifestation>
+                    <FRBRthis value="ADA_AkomaNtoso.akn"/>
+                    <FRBRuri value="ADA_AkomaNtoso.akn"/>
+                    <FRBRdate date="NOW_DATE" name="AKN4EUConversion"/>
+                    <FRBRauthor as="#editor" href="#Engineerish"/>
+                </FRBRManifestation>
+			
+			</identification>
+			<publication date="DATE_PUBLISHED" number="PROTOCOL_NUMBER" name="ORGANIZATION_ID" showAs="ORGANIZATION_NAME"/>
+			
+			<proprietary source="#Engineerish">
+                <DCTerms xmlns:ns2="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/CSD13" xmlns="" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <docIssuerRank>ISSUER_RANKS</docIssuerRank-->   
+                    <dc:description>UNIT_NAME PROTOCOL_NUMBER_YEAR</dc:description>                 
+                    <dc:language>gr</dc:language>
+                    <dc:creator>ISSUERRANKSNAMES</dc:creator>
+                    <dcterms:created>DATE_PUBLISHED</dcterms:created>
+                    <dc:format>text/xml</dc:format>
+                    <dc:type2>DECISION_TYPE_ID</dc:type2>
+                    <dc:type>DECISION_TYPE_NAME</dc:type>
+                    <dc:title>SUBJECT</dc:title>
+                    <docProtocol>PROTOCOL_NUMBER</docProtocol>
+                 
+                    <dc:identifier>ADA</dc:identifier>
+                    <dc:source>DOC_URL</dc:source>
+                    <dc:publisher>ORGANIZATION_NAME</dc:publisher>
+                </DCTerms>
+            </proprietary>
+			
+			
+			
+			
+			
+			
+		</meta>
+		
+		<preamble>
+			<p>
+				PREAMBLE
+			</p>
+		</preamble>
+		<body>
+			<p>
+				MAIN_BODY
+			</p>
+		</body>
+		<conclusions>
+			<p>
+				CONCLUSIONS
+			</p>
+		</conclusions>
+	</act>
+</akomaNtoso>
