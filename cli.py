@@ -95,7 +95,7 @@ def GenerateAkomaNtosoXML(ada):
         issuer_ranks=[]
         issuer_names=[]
         issuer_units=[]
-
+        print("Issuer IDs:"+str(signerIds))
         for sid in signerIds:
             signer_info = requests.get("https://diavgeia.gov.gr/luminapi/opendata/signers/"+str(sid)+".json").json()
             fullname=signer_info['firstName']+" "+signer_info['lastName']
@@ -113,7 +113,10 @@ def GenerateAkomaNtosoXML(ada):
                         break
             #Αν δε βρεις κανένα unit του signer, πέρασέ του ως ιδιότητα την ιδιότητα που έχει στο πρώτο unit του (το οποίο λογικά είναι και το πιο σημαντικό).
             if not rank_found:
-                issuer_ranks.append(requests.get("https://diavgeia.gov.gr/luminapi/opendata/signers/"+str(sid)+".json").json()['units'][0]['positionLabel'])
+                signer_unit=requests.get("https://diavgeia.gov.gr/luminapi/opendata/signers/"+str(sid)+".json").json()['units'][0]
+                signer_unit_id = signer_unit['uid']
+                issuer_ranks.append(signer_unit['positionLabel'])
+                issuer_units.append(requests.get("https://diavgeia.gov.gr/luminapi/opendata/units/"+str(signer_unit_id)+".json").json()['label'])
         print("Issuer Names: "+str(issuer_names))
         print("Issuer Ranks:"+str(issuer_ranks))
         print("Issuer Units:"+str(issuer_units))
@@ -202,12 +205,12 @@ def client():
                 'type': 'list',
                 'name': 'method',
                 'message': 'Ενέργεια:',
-                'choices': ['Άντληση/Προεπισκόπιση δεδομένων', 'Έξοδος']
+                'choices': ['Άντληση/Προεπισκόπηση δεδομένων', 'Έξοδος']
             }]
         method_a = prompt(method_q, style=style)["method"]
         os.system('cls||clear')
-        if method_a == 'Άντληση/Προεπισκόπιση δεδομένων':
-            print("Άντληση/Προεπισκόπιση δεδομένων")
+        if method_a == 'Άντληση/Προεπισκόπηση δεδομένων':
+            print("Άντληση/Προεπισκόπηση δεδομένων")
             print("----------------------------------------------------------------------")
             insert_q = [
                 {
